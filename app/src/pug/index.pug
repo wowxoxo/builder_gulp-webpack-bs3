@@ -1,0 +1,22 @@
+extends templates/head
+block head-meta
+    meta(property="og:title" content="")/
+    meta(property="og:description" content="")/
+    meta(property="og:image" content="https://site-name.ru/img/logo.png")/
+    meta(property="og:url" content= "https://site-name.ru/")/
+    meta(name="description" content="")/
+
+block head-title
+    title Smev
+    
+block body
+    //- include templates/header
+    //-     block header__menu
+    //- | <?php echo 'dsdfdf' ?>
+    main
+        include templates/sections/test-section
+    
+    //- include templates/layouts/footer
+    
+    script(type="application/javascript", src="js/bundle.js")
+    //- include includes/scripts/*
