@@ -321,7 +321,7 @@ gulp.task('watch', ['browser-sync', 'bs-upd', 'fonts', 'just-img', 'styles-libs-
     gulp.watch(path.src.spritesAss + '/img/**/*.png', ['sprite-img-upd']);
     gulp.watch(path.src.pug + '/**/*.pug', ['pug-upd']);
     // gulp.watch('app/src/js/**/*.js', ['scripts'], browserSync.reload);
-    gulp.watch(path.src.js, ['scripts']);
+    gulp.watch(path.src.js, ['scripts-dev']);
     gulp.watch(path.src.fonts, ['fonts']);
     gulp.watch(path.src.img + '/*.*', ['just-img']);
 });
@@ -332,7 +332,7 @@ gulp.task('watch-php', ['php-server', 'bs-upd', 'fonts', 'just-img', 'styles-lib
     gulp.watch(path.src.spritesAss + '/img/**/*.png', ['sprite-img-upd']);
     gulp.watch(path.src.pug + '/**/*.pug', ['pug-upd']);
     // gulp.watch('app/src/js/**/*.js', ['scripts'], browserSync.reload);
-    gulp.watch(path.src.js, ['scripts']);
+    gulp.watch(path.src.js, ['scripts-dev']);
     gulp.watch(path.src.fonts, ['fonts']);
     gulp.watch(path.src.img + '/*.*', ['just-img']);
 

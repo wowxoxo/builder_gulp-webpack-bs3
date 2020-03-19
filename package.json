@@ -1,8 +1,8 @@
 {
   "name": "builder_gulp-webpack-bs3",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Builder with gulp, webpack, bootstrap 3 grid",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp build"
@@ -17,7 +17,7 @@
     "browser-sync": "^2.23.6",
     "csswring": "^6.0.3",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "3.9.1",
     "gulp-bootstrap-configurator": "^0.4.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect-php": "^1.0.1",
@@ -34,11 +34,11 @@
     "sass-lint": "^1.12.1",
     "source-map-loader": "^0.2.3",
     "uglifyjs-webpack-plugin": "^1.2.0",
-    "webpack": "^3.11.0",
+    "webpack": "3.11.0",
     "webpack-stream": "^4.0.1"
   },
   "dependencies": {
-    "bootstrap": "=3.3.7",
+    "bootstrap": "3.3.7",
     "jquery": "^3.3.1"
   }
 }
