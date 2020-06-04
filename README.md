@@ -1,6 +1,6 @@
 # builder_gulp-webpack-bs3
 
-[![Generic badge](https://img.shields.io/badge/version-2.0.0-<COLOR>.svg)](https://github.com/wowxoxo/builder_gulp-webpack-bs3)
+[![Generic badge](https://img.shields.io/badge/version-2.0.1-<COLOR>.svg)](https://github.com/wowxoxo/builder_gulp-webpack-bs3)
 
 Another builder project with Gulp, Webpack and Bootstrap 3.
 

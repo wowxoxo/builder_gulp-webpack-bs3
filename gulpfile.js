@@ -70,38 +70,46 @@
       .pipe(gulp.dest(path.src.sass + "/compiled/b3/dist/"));
   };
 
-  const stylesLibsDev = () => {
-    return gulp
-      .src(builder.stylesLibs)
-      .pipe(sourcemaps.init())
-      .pipe(concat("libs.min.css"))
-      .pipe(
-        postcss([
-          autoprefixer({
-            browsers: ["last 15 versions", "> 5%", "ie 8", "ie 7"],
-            cascade: true
-          }),
-          csswring()
-        ])
-      )
-      .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest(path.dest.css));
+  const stylesLibsDev = (done) => {
+    if (!builder.stylesLibs.length) {
+      done();
+    } else {
+      return gulp
+        .src(builder.stylesLibs)
+        .pipe(sourcemaps.init())
+        .pipe(concat("libs.min.css"))
+        .pipe(
+          postcss([
+            autoprefixer({
+              browsers: ["last 15 versions", "> 5%", "ie 8", "ie 7"],
+              cascade: true
+            }),
+            csswring()
+          ])
+        )
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(path.dest.css));
+    }
   };
 
-  const stylesLibsBuild = () => {
-    return gulp
-      .src(builder.stylesLibs)
-      .pipe(concat("libs.min.css"))
-      .pipe(
-        postcss([
-          autoprefixer({
-            browsers: ["last 15 versions", "> 5%", "ie 8", "ie 7"],
-            cascade: true
-          }),
-          csswring()
-        ])
-      )
-      .pipe(gulp.dest(path.dest.css));
+  const stylesLibsBuild = (done) => {
+    if (!builder.stylesLibs.length) {
+      done();
+    } else {
+      return gulp
+        .src(builder.stylesLibs)
+        .pipe(concat("libs.min.css"))
+        .pipe(
+          postcss([
+            autoprefixer({
+              browsers: ["last 15 versions", "> 5%", "ie 8", "ie 7"],
+              cascade: true
+            }),
+            csswring()
+          ])
+        )
+        .pipe(gulp.dest(path.dest.css));
+    }
   };
 
   const styles = [
@@ -166,12 +174,16 @@
 
   /* Scripts */
 
-  const scriptsLibs = () => {
-    return gulp
-      .src(builder.scriptsLibs)
-      .pipe(concat("libs.min.js"))
-      .pipe(uglify())
-      .pipe(gulp.dest(path.dest.js));
+  const scriptsLibs = (done) => {
+    if (!builder.scriptsLibs.length) {
+      done();
+    } else {
+      return gulp
+        .src(builder.scriptsLibs)
+        .pipe(concat("libs.min.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest(path.dest.js));
+    }
   };
 
   const scriptsDev = () => {
@@ -304,11 +316,14 @@
 
   const build = (done) => {
     const buildCss = gulp
-      .src([
-        // path.dest.css + "/base.min.css",
-        path.dest.css + "/libs.min.css",
-        path.dest.css + "/main.min.css"
-      ])
+      .src(
+        [
+          // path.dest.css + "/base.min.css", // for bs4
+          path.dest.css + "/libs.min.css",
+          path.dest.css + "/main.min.css"
+        ],
+        { allowEmpty: true }
+      )
       .pipe(gulp.dest(path.build + "/css"));
 
     const buildFonts = gulp
