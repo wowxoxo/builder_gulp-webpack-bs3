@@ -1,12 +1,12 @@
 # builder_gulp-webpack-bs3
 
-[![Generic badge](https://img.shields.io/badge/version-2.0.1-<COLOR>.svg)](https://github.com/wowxoxo/builder_gulp-webpack-bs3)
+[![Generic badge](https://img.shields.io/badge/version-2.1.0-<COLOR>.svg)](https://github.com/wowxoxo/builder_gulp-webpack-bs3)
 
 Another builder project with Gulp, Webpack and Bootstrap 3.
 
 ## System requirements
 
-- [Node.js](https://nodejs.org)
+- [Node.js v10](https://nodejs.org)
 
 ## Clone repository an init project
 
