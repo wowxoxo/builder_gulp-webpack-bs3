@@ -231,6 +231,22 @@
       );
   };
 
+  const pugUpdMinify = () => {
+    return gulp
+      .src(path.src.pug + "/*.pug")
+      .pipe(
+        pug({
+          pretty: false
+        })
+      )
+      .pipe(gulp.dest(path.dest.pug))
+      .pipe(
+        browserSync.reload({
+          stream: true
+        })
+      );
+  };
+
   /* Sprites */
 
   const spriteSvgMake = () => {
@@ -422,7 +438,7 @@
     scriptsBuild,
     svgUpdSeries,
     spriteImgUpd,
-    pugUpd,
+    pugUpdMinify,
     build
   );
 
